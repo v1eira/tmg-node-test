@@ -1,0 +1,28 @@
+{
+  "name": "tmg-node-test",
+  "version": "1.0.0",
+  "description": "node challenge for tmg",
+  "main": "src/main/server.ts",
+  "scripts": {
+    "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/main/server.ts",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "start": "node dist/main/server.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@types/express": "^4.17.14",
+    "@types/jest": "^29.2.3",
+    "@types/node": "^18.11.9",
+    "jest": "^29.3.0",
+    "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
