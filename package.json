@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/main/server.ts",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
-    "start-dist": "node dist/main/server.js",
+    "start-dist": "node dist/src/main/server.js",
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix"
