@@ -8,12 +8,11 @@ export class InMemoryStackRepository implements StackRepository {
   ) {
     this.stack.content = []
   }
-  
+
   add (params: AddToStackParams): void {
     this.stack.content.push(params.value)
-    return
   }
-  
+
   get (): any {
     return this.stack.content.pop() || null
   }

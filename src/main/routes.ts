@@ -11,7 +11,7 @@ export default (app: Express): void => {
   const stackController = makeStackController()
   const storeController = makeStoreController()
 
-  const createHttpRequest = (req: Request) => {
+  const createHttpRequest = (req: Request): HttpRequest => {
     const httpRequest: HttpRequest = {
       body: (req.body || {}),
       params: (req.params || {}),
@@ -22,9 +22,9 @@ export default (app: Express): void => {
     return httpRequest
   }
 
-  const createHttpResponse = (res: Response, httpResponse: HttpResponse, sendEmptyBody: boolean = false) => {
-    if (httpResponse.statusCode == 200) {
-      if (!httpResponse.body && !sendEmptyBody){
+  const createHttpResponse = (res: Response, httpResponse: HttpResponse, sendEmptyBody: boolean = false): void => {
+    if (httpResponse.statusCode === 200) {
+      if (!httpResponse.body && !sendEmptyBody) {
         res.status(httpResponse.statusCode).send()
       } else {
         res.status(httpResponse.statusCode).json(httpResponse.body)

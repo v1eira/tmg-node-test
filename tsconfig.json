@@ -7,11 +7,12 @@
       "target": "es2019",
       "esModuleInterop": true,
       "sourceMap": true,
-      "rootDir": "src",
+      "rootDir": "",
       "baseUrl": "src"
   },
   "include": [
-      "src"
+      "src",
+      "jest.config.ts"
   ],
   "exclude": []
 }

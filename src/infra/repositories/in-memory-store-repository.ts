@@ -8,17 +8,16 @@ export class InMemoryStoreRepository implements StoreRepository {
   ) {
     this.store.content = {}
   }
-  
+
   set (params: SetToStoreParams): void {
     this.store.content[params.key] = { value: params.value, timestamp: Date.now(), ttl: params.ttl * 1000 }
-    return
   }
-  
+
   get (params: GetFromStoreParams): any {
     const entry = this.store.content[params.key]
     let value = null
     if (entry && (!entry.ttl || (Date.now() - entry.ttl <= entry.timestamp))) {
-        value = entry.value
+      value = entry.value
     }
     return value
   }

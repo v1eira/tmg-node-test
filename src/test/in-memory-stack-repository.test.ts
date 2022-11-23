@@ -7,7 +7,7 @@ describe('Stack Repository', () => {
     stackRepository.add({ value: 1 })
     expect(stackRepository.stack.content).toStrictEqual([1])
   })
-  
+
   it('Should get value from stack', () => {
     stackRepository.stack.content = [1]
     expect(stackRepository.get()).toBe(1)

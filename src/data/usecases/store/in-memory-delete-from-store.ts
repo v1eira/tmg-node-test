@@ -8,6 +8,5 @@ export class InMemoryDeleteFromStore implements DeleteFromStore {
 
   delete (params: DeleteFromStoreParams): void {
     this.storeRepository.delete(params)
-    return 
   }
 }

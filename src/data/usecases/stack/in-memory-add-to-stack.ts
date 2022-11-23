@@ -8,6 +8,5 @@ export class InMemoryAddToStack implements AddToStack {
 
   add (params: AddToStackParams): void {
     this.stackRepository.add(params)
-    return 
   }
 }

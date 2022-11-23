@@ -30,7 +30,9 @@ This will run all the tests inside the ```test``` directory.
 
 ## Architecture
 
-This project was built using the DDD (Domain Driven Design) concept, with 5 layers as follows:
+I decided to use TypeScript in this solution because it offers more flexibility to implement a pattern like DDD, providing interfaces to work with and improving code quality by making it easier to apply SOLID principles. This project was built using the DDD (Domain Driven Design) concept, with 4 layers as follows:
+
+![solution-diagram](/images/solution-diagram.png)
 
 ### Data
 Contains the implementation of the use cases defined in the domain layer making use of the repositories interfaces defined and exported in this layer.
@@ -41,11 +43,12 @@ Has the definition (interfaces) of all models and use cases that should be used 
 ### Infra
 This layer implements and exports the repositories defined in the data layer.
 
-### Main
-Layer responsible for connecting everything and make the application run. It has all the application routes and factories implementations, which are used in these routes in order to abstract the instantiation of the controllers.
-
 ### Presentation
 This layer has the implementation of the controllers that are going to handle the requests on the app routes. It also contain the definition and implementation of errors and validation helpers.
+
+This solution has another layer, ```Main```, that is responsible for just connecting everything and make the application run. It has all the application routes and factories implementations, which are used in these routes in order to abstract the instantiation of the controllers.
+
+<b>Another solution would be possible with plain JS, using concrete classes instead of the abstractions contained in these files. By doing so, we would have classes with their own methods and properties being exposed to the rest of the application.</b>
 
 ## Routes
 

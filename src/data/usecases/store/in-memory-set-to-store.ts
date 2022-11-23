@@ -8,6 +8,5 @@ export class InMemorySetToStore implements SetToStore {
 
   set (params: SetToStoreParams): void {
     this.storeRepository.set(params)
-    return 
   }
 }

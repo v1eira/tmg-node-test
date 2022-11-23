@@ -9,8 +9,8 @@ describe('Store Controller', () => {
     it('Should call "set" correctly', async () => {
       const req: HttpRequest = {
         body: {
-          key: "name",
-          value: "Larry",
+          key: 'name',
+          value: 'Larry',
           ttl: 5
         }
       }
@@ -21,7 +21,7 @@ describe('Store Controller', () => {
 
     it('Should call "get" correctly', async () => {
       const req: HttpRequest = {
-        body: { key: "name" }
+        body: { key: 'name' }
       }
       const response = await storeController.get(req)
       expect(response).toHaveProperty('statusCode')
@@ -30,7 +30,7 @@ describe('Store Controller', () => {
 
     it('Should call "delete" correctly', async () => {
       const req: HttpRequest = {
-        body: { key: "name" }
+        body: { key: 'name' }
       }
       const response = await storeController.delete(req)
       expect(response).toHaveProperty('statusCode')
@@ -42,8 +42,8 @@ describe('Store Controller', () => {
     it('Should call "set" with invalid params', async () => {
       const req: HttpRequest = {
         body: {
-          key: "name",
-          vale: "Larry",
+          key: 'name',
+          vale: 'Larry',
           TTL: 5
         }
       }
@@ -55,7 +55,7 @@ describe('Store Controller', () => {
 
     it('Should call "get" with invalid param', async () => {
       const req: HttpRequest = {
-        body: { entry: "name" }
+        body: { entry: 'name' }
       }
       const err = await storeController.get(req)
       expect(err).toHaveProperty('statusCode')
@@ -65,7 +65,7 @@ describe('Store Controller', () => {
 
     it('Should call "delete" with invalid param', async () => {
       const req: HttpRequest = {
-        body: { entry: "name" }
+        body: { entry: 'name' }
       }
       const err = await storeController.delete(req)
       expect(err).toHaveProperty('statusCode')
